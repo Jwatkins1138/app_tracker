@@ -1,14 +1,43 @@
 <p style="color: green"><%= notice %></p>
+<main>
+  <h1>Applications</h1>
+  <%= button_to "New application", new_application_path, method: :get %>
 
-<h1>Applications</h1>
+  <div id="pending" class="applications">
+    <% @pending.each do |application| %>
+      <%= render application %>
+      <p>
+        <h3><%= application.name %></h3>
+        <%= application.status %>
+        <%= application.via %>
+        <%= application.notes %>
+        <%= link_to "Show this application", application %>
+      </p>
+    <% end %>
+  </div>
+  <div id="sent" class="applications">
+    <% @sent.each do |application| %>
+      <%= render application %>
+      <p>
+        <h3><%= application.name %></h3>
+        <%= application.status %>
+        <%= application.via %>
+        <%= application.notes %>
+        <%= link_to "Show this application", application %>
+      </p>
+    <% end %>
+  </div>
+  <div id="rejected" class="applications">
+    <% @rejected.each do |application| %>
+      <%= render application %>
+      <p>
+        <h3><%= application.name %></h3>
+        <%= application.status %>
+        <%= application.via %>
+        <%= application.notes %>
+        <%= link_to "Show this application", application %>
+      </p>
+    <% end %>
+  </div>
+</main>  
 
-<div id="applications">
-  <% @applications.each do |application| %>
-    <%= render application %>
-    <p>
-      <%= link_to "Show this application", application %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New application", new_application_path %>

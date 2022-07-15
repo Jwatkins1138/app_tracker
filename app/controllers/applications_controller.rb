@@ -3,7 +3,9 @@ class ApplicationsController < ApplicationController
 
   # GET /applications or /applications.json
   def index
-    @applications = Application.all
+    @sent = Application.sent
+    @pending = Application.pending
+    @rejected = Application.rejected
   end
 
   # GET /applications/1 or /applications/1.json
@@ -65,6 +67,6 @@ class ApplicationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def application_params
-      params.fetch(:application, {})
+      params.require(:application).permit(:name, :status, :via, :notes)
     end
 end

@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+ main {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .applications {
+  display: flex;
+  flex-direction: column;
+ }
+
+ #sent {
+  background-color: rgb(0, 0, 255, .3);
+ }
+
+ #pending {
+  background-color: rgb(0, 128, 0, .3);
+ }
+
+ #rejected {
+  background-color: rgb(255, 0, 0, .3);
+ }
