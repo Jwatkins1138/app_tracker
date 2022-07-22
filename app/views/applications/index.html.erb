@@ -3,41 +3,46 @@
   <h1>Applications</h1>
   <%= button_to "New application", new_application_path, method: :get %>
 
-  <div id="pending" class="applications">
+  <div class="applications">
+    
     <% @pending.each do |application| %>
-      <%= render application %>
-      <p>
-        <h3><%= application.name %></h3>
-        <%= application.status %>
-        <%= application.via %>
-        <%= application.notes %>
-        <%= link_to "Show this application", application %>
-      </p>
+      <div class='pending'>
+        <div class='title'><h3><%= application.name %></h3></div>
+        <div class='info'>
+        <div><%= application.status %></div>
+        <div><%= application.via %></div>
+        <div><%= application.notes %></div>
+        </div>
+        <div><%= button_to "Show this application", application, method: :get %></div>
+      </div>
     <% end %>
-  </div>
-  <div id="sent" class="applications">
+    
+    
     <% @sent.each do |application| %>
-      <%= render application %>
-      <p>
-        <h3><%= application.name %></h3>
-        <%= application.status %>
-        <%= application.via %>
-        <%= application.notes %>
-        <%= link_to "Show this application", application %>
-      </p>
+      <div class='sent'>
+        <div class='title'><h3><%= application.name %></h3></div>
+        <div class='info'>
+        <div><%= application.status %></div>
+        <div><%= application.via %></div>
+        <div><%= application.notes %></div>
+        </div>
+        <div><%= button_to "Show this application", application, method: :get %></div>
+      </div>
     <% end %>
-  </div>
-  <div id="rejected" class="applications">
+    
+    
     <% @rejected.each do |application| %>
-      <%= render application %>
-      <p>
-        <h3><%= application.name %></h3>
-        <%= application.status %>
-        <%= application.via %>
-        <%= application.notes %>
-        <%= link_to "Show this application", application %>
-      </p>
+      <div class='rejected'>
+        <div class='title'><h3><%= application.name %></h3></div>
+        <div class='info'>
+        <div><%= application.status %></div>
+        <div><%= application.via %></div>
+        <div><%= application.notes %></div>
+        </div>
+        <div><%= button_to "Show this application", application, method: :get %></div>
+      </div>
     <% end %>
+    
   </div>
 </main>  
 

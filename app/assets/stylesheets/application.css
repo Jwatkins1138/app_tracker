@@ -14,6 +14,15 @@
  *= require_self
  */
 
+ html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  background: radial-gradient(at top left, rgb(50, 50, 50), blue);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+ }
+
  main {
   display: flex;
   flex-direction: column;
@@ -24,14 +33,66 @@
   flex-direction: column;
  }
 
- #sent {
+ .title {
+  width: 30vw;
+ }
+
+ .info {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+ }
+
+ .info >* {
+  margin-left: 1em;
+  padding-right: 2em;
+  border-right: solid 1px lime;
+ }
+
+ .sent {
   background-color: rgb(0, 0, 255, .3);
+  border: 1px solid aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .2em;
  }
 
- #pending {
+ .pending {
   background-color: rgb(0, 128, 0, .3);
+  border: 1px solid lime;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .2em;
  }
 
- #rejected {
+ .rejected {
   background-color: rgb(255, 0, 0, .3);
+  border: 1px solid orangered;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .2em;
+ }
+
+ a {
+  color: lime;
+ }
+
+ a:visited {
+  color: orangered;
+ }
+
+ button {
+  border: none;
+  background: black;
+  color:aquamarine;
+  padding: .2em;
+  margin: .2em;
+ }
+
+ button:hover {
+  background: aquamarine;
+  color: blueviolet;
  }
